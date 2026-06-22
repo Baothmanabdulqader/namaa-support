@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نماء · الدعم والخصوصية | Namaa · Support & Privacy</title>
+<style>
+  :root{
+    --green-deep:#15321e;
+    --green:#2c5a3a;
+    --gold:#c6a871;
+    --gold-deep:#a8854b;
+    --cream:#efe6d3;
+    --card:#faf6ec;
+    --ink:#28281f;
+    --muted:#837c6c;
+    --line:#e4d9c2;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Arabic","Helvetica Neue",Arial,sans-serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px 64px;}
+
+  /* Header */
+  header{
+    background:linear-gradient(160deg,var(--green-deep),var(--green));
+    color:#f3ead7;
+    padding:54px 22px 40px;
+    text-align:center;
+  }
+  .badge{
+    width:74px;height:74px;border-radius:50%;
+    margin:0 auto 16px;
+    background:linear-gradient(140deg,var(--gold),var(--gold-deep));
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 22px rgba(0,0,0,.28);
+    font-size:34px;
+  }
+  header h1{margin:0;font-size:30px;letter-spacing:.5px;color:#fff;}
+  header p{margin:8px 0 0;color:#cdbf9f;font-size:15px;}
+
+  /* Language toggle */
+  .lang{display:flex;gap:8px;justify-content:center;margin:22px 0 4px;}
+  .lang button{
+    border:1px solid var(--line);background:var(--card);color:var(--muted);
+    font:inherit;font-size:14px;font-weight:600;cursor:pointer;
+    padding:7px 18px;border-radius:999px;transition:.15s;
+  }
+  .lang button.on{background:var(--green);color:#fff;border-color:var(--green);}
+
+  /* Cards / sections */
+  section.block{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:24px 24px 8px;
+    margin:18px 0;
+  }
+  h2{
+    font-size:20px;margin:6px 0 14px;color:var(--green-deep);
+    display:flex;align-items:center;gap:10px;
+  }
+  h2 .dot{width:9px;height:9px;border-radius:50%;background:var(--gold-deep);display:inline-block;}
+  h3{font-size:16px;color:var(--green);margin:20px 0 6px;}
+  p{margin:0 0 14px;}
+  ul{margin:0 0 14px;padding-inline-start:20px;}
+  li{margin:0 0 8px;}
+  a{color:var(--gold-deep);font-weight:600;}
+  .muted{color:var(--muted);font-size:14px;}
+  .updated{color:var(--muted);font-size:14px;text-align:center;margin:4px 0 0;}
+  .fill{background:#fbf2db;border:1px dashed var(--gold-deep);border-radius:10px;
+        padding:10px 14px;color:var(--gold-deep);font-weight:600;font-size:14px;}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 22px 0;}
+  hr{border:none;border-top:1px solid var(--line);margin:6px 0 0;}
+  [hidden]{display:none !important;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">🌱</div>
+  <h1>نماء</h1>
+  <p>الدعم وسياسة الخصوصية · Support &amp; Privacy</p>
+</header>
+
+<div class="wrap">
+  <div class="lang">
+    <button id="btn-ar" class="on" onclick="setLang('ar')">العربية</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- ============================== ARABIC ============================== -->
+  <div id="ar" dir="rtl">
+    <p class="updated">آخر تحديث: ٢٢ يونيو ٢٠٢٦</p>
+
+    <section class="block">
+      <h2><span class="dot"></span>نظرة عامة</h2>
+      <p>نماء تطبيق مالي شخصي يساعدك على معرفة المبلغ الآمن للصرف على مدار دورة راتبك. صُمّم نماء على مبدأ الخصوصية أولًا: <strong>بياناتك المالية تبقى لك وحدك</strong>، ولا يطّلع عليها المطوّر إطلاقًا.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="dot"></span>سياسة الخصوصية</h2>
+
+      <h3>ما البيانات التي نجمعها؟</h3>
+      <p><strong>لا نجمع أي بيانات شخصية.</strong> لا يملك نماء خوادم خاصة، ولا يرسل بياناتك إلى المطوّر أو إلى أي طرف ثالث. كل ما تُدخله — الراتب، الالتزامات، المصاريف، الأهداف، المناسبات — يُحفظ على جهازك وداخل حساب iCloud الخاص بك فقط.</p>
+
+      <h3>التخزين والمزامنة (iCloud)</h3>
+      <p>تُخزّن بياناتك محليًا على جهازك، وتُزامَن عبر خدمة CloudKit من Apple داخل حساب iCloud الخاص بك حتى تظهر على أجهزتك الأخرى. تجري هذه المزامنة بالكامل تحت حساب Apple الخاص بك، ويحكمها <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">إشعار خصوصية Apple</a>. المطوّر لا يملك أي وصول إلى هذه البيانات.</p>
+
+      <h3>لا تتبّع ولا إعلانات</h3>
+      <ul>
+        <li>لا نستخدم أدوات تحليلات أو تتبّع.</li>
+        <li>لا توجد إعلانات داخل التطبيق.</li>
+        <li>لا نشارك بياناتك مع أي جهة، لأننا أصلًا لا نملكها.</li>
+      </ul>
+
+      <h3>التنبيهات</h3>
+      <p>تُجدوَل التنبيهات (كتذكير الراتب والدفعات) محليًا على جهازك، ولا تمرّ بأي خادم.</p>
+
+      <h3>الاشتراكات والدفع</h3>
+      <p>تتم عمليات الاشتراك في «نماء+» عبر نظام الشراء داخل التطبيق من Apple. تتولّى Apple معالجة الدفع، ولا يصل المطوّر إلى تفاصيل بطاقتك أو وسيلة دفعك.</p>
+
+      <h3>التحكّم في بياناتك وحذفها</h3>
+      <ul>
+        <li>تقدر تُصدّر بياناتك في أي وقت بصيغة CSV أو PDF من داخل التطبيق.</li>
+        <li>تقدر تمسح كل بياناتك من داخل الإعدادات في التطبيق.</li>
+        <li>حذف التطبيق وإزالة بياناته من iCloud يحذفها نهائيًا.</li>
+      </ul>
+
+      <h3>خصوصية الأطفال</h3>
+      <p>نماء غير موجّه للأطفال، ولا يجمع أي بيانات منهم — أو من أي مستخدم.</p>
+
+      <h3>التغييرات على هذه السياسة</h3>
+      <p>قد نُحدّث هذه السياسة من وقت لآخر، وسيظهر تاريخ آخر تحديث في أعلى الصفحة.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="dot"></span>شروط الاشتراك في نماء+</h2>
+      <ul>
+        <li>اشتراك متجدّد تلقائيًا، متوفّر بخطّتين: <strong>شهري ٩٫٩٩ ر.س / شهر</strong> أو <strong>سنوي ٤٩٫٩٩ ر.س / سنة</strong> (قد تختلف القيمة حسب منطقتك حسب أسعار Apple المحلّية).</li>
+        <li><strong>تجربة مجانية ٧ أيام</strong> للمشتركين الجدد.</li>
+        <li>يُحسم المبلغ على حساب Apple عند تأكيد الشراء.</li>
+        <li>يتجدّد الاشتراك تلقائيًا ما لم تُلغِه قبل ٢٤ ساعة على الأقل من نهاية الفترة الحالية.</li>
+        <li>يُحسم مبلغ التجديد خلال ٢٤ ساعة قبل نهاية الفترة الحالية.</li>
+        <li>تقدر تدير اشتراكك أو تلغيه في أي وقت من إعدادات حساب App Store.</li>
+        <li>تتوفّر «استعادة المشتريات» داخل التطبيق.</li>
+      </ul>
+      <p class="muted">شروط الاستخدام (EULA): <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">اتفاقية ترخيص المستخدم القياسية من Apple</a>.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="dot"></span>الدعم والتواصل</h2>
+      <p>لأي سؤال أو مساعدة بخصوص نماء أو هذه السياسة، تواصل معنا عبر البريد:</p>
+      <p class="fill">✉︎ ضع بريد الدعم هنا — مثال: support@yourdomain.com</p>
+    </section>
+  </div>
+
+  <!-- ============================== ENGLISH ============================== -->
+  <div id="en" dir="ltr" hidden>
+    <p class="updated">Last updated: June 22, 2026</p>
+
+    <section class="block">
+      <h2><span class="dot"></span>Overview</h2>
+      <p>Namaa is a personal-finance app that helps you see how much is safe to spend across your salary cycle. Namaa is built privacy-first: <strong>your financial data stays yours alone</strong>, and the developer never has access to it.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="dot"></span>Privacy Policy</h2>
+
+      <h3>What data do we collect?</h3>
+      <p><strong>We collect no personal data.</strong> Namaa runs no servers of its own and sends none of your data to the developer or any third party. Everything you enter — salary, commitments, expenses, goals, occasions — is stored on your device and inside your own iCloud account only.</p>
+
+      <h3>Storage &amp; sync (iCloud)</h3>
+      <p>Your data is stored locally on your device and synced through Apple's CloudKit within your own iCloud account so it appears on your other devices. This sync happens entirely under your Apple ID and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. The developer has no access to it.</p>
+
+      <h3>No tracking, no ads</h3>
+      <ul>
+        <li>We use no analytics or tracking tools.</li>
+        <li>There are no ads in the app.</li>
+        <li>We don't share your data with anyone — because we don't hold it.</li>
+      </ul>
+
+      <h3>Notifications</h3>
+      <p>Reminders (such as payday and payment alerts) are scheduled locally on your device and never pass through any server.</p>
+
+      <h3>Subscriptions &amp; payment</h3>
+      <p>Namaa+ subscriptions are handled through Apple's In-App Purchase. Apple processes the payment, and the developer never receives your card or payment-method details.</p>
+
+      <h3>Controlling and deleting your data</h3>
+      <ul>
+        <li>You can export your data anytime as CSV or PDF from within the app.</li>
+        <li>You can erase all of your data from the app's Settings.</li>
+        <li>Deleting the app and removing its iCloud data deletes it permanently.</li>
+      </ul>
+
+      <h3>Children's privacy</h3>
+      <p>Namaa is not directed at children and collects no data from them — or from any user.</p>
+
+      <h3>Changes to this policy</h3>
+      <p>We may update this policy from time to time; the latest date appears at the top of the page.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="dot"></span>Namaa+ Subscription Terms</h2>
+      <ul>
+        <li>Auto-renewable subscription, available as <strong>Monthly — SAR 9.99 / month</strong> or <strong>Annual — SAR 49.99 / year</strong> (local price set by Apple may vary by region).</li>
+        <li><strong>7-day free trial</strong> for new subscribers.</li>
+        <li>Payment is charged to your Apple Account on confirmation of purchase.</li>
+        <li>The subscription renews automatically unless cancelled at least 24 hours before the end of the current period.</li>
+        <li>Renewal is charged within 24 hours before the end of the current period.</li>
+        <li>You can manage or cancel anytime in your App Store account settings.</li>
+        <li>"Restore Purchases" is available inside the app.</li>
+      </ul>
+      <p class="muted">Terms of Use (EULA): <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple's standard End User License Agreement</a>.</p>
+    </section>
+
+    <section class="block">
+      <h2><span class="dot"></span>Support &amp; Contact</h2>
+      <p>For any question or help regarding Namaa or this policy, contact us by email:</p>
+      <p class="fill">✉︎ Put your support email here — e.g. support@yourdomain.com</p>
+    </section>
+  </div>
+
+  <footer>
+    <hr>
+    <p>© 2026 نماء · Namaa — عبدالقادر باعثمان</p>
+  </footer>
+</div>
+
+<script>
+  function setLang(l){
+    document.getElementById('ar').hidden = (l !== 'ar');
+    document.getElementById('en').hidden = (l !== 'en');
+    document.documentElement.lang = l;
+    document.documentElement.dir = (l === 'ar') ? 'rtl' : 'ltr';
+    document.getElementById('btn-ar').classList.toggle('on', l === 'ar');
+    document.getElementById('btn-en').classList.toggle('on', l === 'en');
+  }
+</script>
+
+</body>
+</html>
