@@ -1,248 +1,1027 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="light">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>نماء · الدعم والخصوصية | Namaa · Support & Privacy</title>
-<style>
-  :root{
-    --green-deep:#15321e;
-    --green:#2c5a3a;
-    --gold:#c6a871;
-    --gold-deep:#a8854b;
-    --cream:#efe6d3;
-    --card:#faf6ec;
-    --ink:#28281f;
-    --muted:#837c6c;
-    --line:#e4d9c2;
-  }
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  body{
-    background:var(--cream);
-    color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans Arabic","Helvetica Neue",Arial,sans-serif;
-    line-height:1.85;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:760px;margin:0 auto;padding:0 22px 64px;}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14261a">
+  <meta name="description" content="سياسة الخصوصية والدعم لتطبيق نماء — تفاصيل واضحة عن التخزين، iCloud، رسائل البنوك، الاشتراكات، وحذف البيانات.">
+  <link rel="canonical" href="https://baothmanabdulqader.github.io/namaa-support/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_SA">
+  <meta property="og:title" content="نماء · الخصوصية والدعم">
+  <meta property="og:description" content="خصوصيتك، بلغة واضحة. تعرّف على طريقة تعامل نماء مع بياناتك.">
+  <meta property="og:url" content="https://baothmanabdulqader.github.io/namaa-support/">
+  <title>نماء · الخصوصية والدعم | Namaa · Privacy &amp; Support</title>
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('namaa-policy-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.dataset.theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    } catch (_) {}
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f8f9f5;
+      --card: #ffffff;
+      --card-soft: #f1f4ee;
+      --line: #e5e9e3;
+      --line-strong: #d7ddd5;
+      --forest: #14261a;
+      --green: #294f33;
+      --green-mid: #496c51;
+      --sage: #a9bba6;
+      --gold: #e3c568;
+      --gold-deep: #b79335;
+      --cream: #f2ead3;
+      --ink: #111712;
+      --text: #303832;
+      --muted: #717873;
+      --clay: #a4513d;
+      --shadow: 0 22px 60px rgba(20, 38, 26, .08);
+      --shadow-soft: 0 10px 32px rgba(20, 38, 26, .06);
+      --radius-hero: 38px;
+      --radius-card: 26px;
+      --radius-control: 18px;
+    }
 
-  /* Header */
-  header{
-    background:linear-gradient(160deg,var(--green-deep),var(--green));
-    color:#f3ead7;
-    padding:54px 22px 40px;
-    text-align:center;
-  }
-  .badge{
-    width:74px;height:74px;border-radius:50%;
-    margin:0 auto 16px;
-    background:linear-gradient(140deg,var(--gold),var(--gold-deep));
-    display:flex;align-items:center;justify-content:center;
-    box-shadow:0 8px 22px rgba(0,0,0,.28);
-    font-size:34px;
-  }
-  header h1{margin:0;font-size:30px;letter-spacing:.5px;color:#fff;}
-  header p{margin:8px 0 0;color:#cdbf9f;font-size:15px;}
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --page: #101410;
+      --card: #191e19;
+      --card-soft: #222822;
+      --line: #303830;
+      --line-strong: #3b453c;
+      --forest: #14261a;
+      --green: #376844;
+      --green-mid: #78957b;
+      --sage: #9fb19d;
+      --gold: #e3c568;
+      --gold-deep: #d0ad4e;
+      --cream: #f2ead3;
+      --ink: #f3f5f2;
+      --text: #d9dfd9;
+      --muted: #9ea79f;
+      --clay: #c2705a;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .24);
+      --shadow-soft: 0 12px 34px rgba(0, 0, 0, .18);
+    }
 
-  /* Language toggle */
-  .lang{display:flex;gap:8px;justify-content:center;margin:22px 0 4px;}
-  .lang button{
-    border:1px solid var(--line);background:var(--card);color:var(--muted);
-    font:inherit;font-size:14px;font-weight:600;cursor:pointer;
-    padding:7px 18px;border-radius:999px;transition:.15s;
-  }
-  .lang button.on{background:var(--green);color:#fff;border-color:var(--green);}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 5%, rgba(169, 187, 166, .22), transparent 28rem),
+        radial-gradient(circle at 91% 19%, rgba(227, 197, 104, .12), transparent 24rem),
+        var(--page);
+      font-family: "Tajawal", -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Arabic", Arial, sans-serif;
+      line-height: 1.85;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-  /* Cards / sections */
-  section.block{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:18px;
-    padding:24px 24px 8px;
-    margin:18px 0;
-  }
-  h2{
-    font-size:20px;margin:6px 0 14px;color:var(--green-deep);
-    display:flex;align-items:center;gap:10px;
-  }
-  h2 .dot{width:9px;height:9px;border-radius:50%;background:var(--gold-deep);display:inline-block;}
-  h3{font-size:16px;color:var(--green);margin:20px 0 6px;}
-  p{margin:0 0 14px;}
-  ul{margin:0 0 14px;padding-inline-start:20px;}
-  li{margin:0 0 8px;}
-  a{color:var(--gold-deep);font-weight:600;}
-  .muted{color:var(--muted);font-size:14px;}
-  .updated{color:var(--muted);font-size:14px;text-align:center;margin:4px 0 0;}
-  .fill{background:#fbf2db;border:1px dashed var(--gold-deep);border-radius:10px;
-        padding:10px 14px;color:var(--gold-deep);font-weight:600;font-size:14px;}
-  footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 22px 0;}
-  hr{border:none;border-top:1px solid var(--line);margin:6px 0 0;}
-  [hidden]{display:none !important;}
-</style>
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .42;
+      background-image:
+        linear-gradient(90deg, transparent calc(50% - .5px), var(--line) 50%, transparent calc(50% + .5px));
+      mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 76%, transparent);
+      z-index: -1;
+    }
+
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    a { color: inherit; }
+    [hidden] { display: none !important; }
+
+    .skip-link {
+      position: fixed;
+      inset-inline-start: 18px;
+      top: -80px;
+      z-index: 100;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: var(--gold);
+      color: #08321f;
+      font-weight: 800;
+      text-decoration: none;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 16px; }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      padding: 14px 18px;
+      background: color-mix(in srgb, var(--page) 82%, transparent);
+      backdrop-filter: blur(22px) saturate(140%);
+      -webkit-backdrop-filter: blur(22px) saturate(140%);
+      border-bottom: 1px solid color-mix(in srgb, var(--line) 72%, transparent);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 19px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: -.02em;
+    }
+
+    .mini-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: var(--forest);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), 0 7px 18px rgba(20,38,26,.15);
+    }
+
+    .gem {
+      --size: 22px;
+      width: var(--size);
+      height: var(--size);
+      position: relative;
+      transform: rotate(45deg);
+      border: 1px solid rgba(110, 83, 26, .35);
+      background: conic-gradient(from 0deg, #f4e7bc 0 25%, #dcc07a 0 50%, #b0892f 0 75%, #c99f47 0);
+      box-shadow: 0 0 22px rgba(227, 197, 104, .16);
+    }
+
+    .gem::before,
+    .gem::after {
+      content: "";
+      position: absolute;
+      inset: 22%;
+      background: #a6402f;
+      border: 1px solid rgba(110, 83, 26, .28);
+    }
+    .gem::after {
+      inset: 39%;
+      background: #f2ead3;
+      box-shadow: inset 0 0 0 3px #123528;
+    }
+
+    .nav-actions { display: flex; align-items: center; gap: 9px; }
+
+    .language-switch {
+      display: flex;
+      gap: 4px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .language-switch button,
+    .theme-toggle {
+      min-height: 38px;
+      border: 0;
+      border-radius: 12px;
+      cursor: pointer;
+      color: var(--muted);
+      background: transparent;
+      transition: color .2s ease, background .2s ease, transform .2s ease;
+    }
+
+    .language-switch button {
+      min-width: 78px;
+      padding: 6px 13px;
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .language-switch button[aria-pressed="true"] {
+      color: var(--cream);
+      background: var(--green);
+    }
+
+    .theme-toggle {
+      width: 46px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+      display: grid;
+      place-items: center;
+      font-size: 17px;
+    }
+
+    .language-switch button:hover,
+    .theme-toggle:hover { transform: translateY(-1px); }
+
+    .hero {
+      max-width: 1120px;
+      min-height: 480px;
+      margin: 28px auto 0;
+      padding: clamp(34px, 6vw, 72px);
+      border-radius: var(--radius-hero);
+      position: relative;
+      overflow: hidden;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 12% 8%, rgba(73,108,81,.82), transparent 32%),
+        linear-gradient(145deg, #1a3825, var(--forest) 62%, #0c1910);
+      box-shadow: 0 35px 95px rgba(20, 38, 26, .22);
+      isolation: isolate;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(227, 197, 104, .13);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero::before { width: 540px; height: 540px; inset-inline-end: -190px; top: -250px; }
+    .hero::after { width: 360px; height: 360px; inset-inline-end: -40px; bottom: -240px; border-color: rgba(169,187,166,.14); }
+
+    .hero-line {
+      position: absolute;
+      inset: 0;
+      opacity: .18;
+      background:
+        linear-gradient(128deg, transparent 28%, rgba(242,234,211,.22) 28.2%, transparent 28.4%),
+        linear-gradient(52deg, transparent 68%, rgba(227,197,104,.2) 68.2%, transparent 68.4%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      min-height: 340px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(260px, .85fr);
+      align-items: center;
+      gap: clamp(32px, 7vw, 96px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .03em;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--sage));
+    }
+
+    .hero h1 {
+      max-width: 680px;
+      margin: 0;
+      color: #fffdf7;
+      font-size: clamp(40px, 6.4vw, 75px);
+      line-height: 1.13;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+
+    .hero-copy > p {
+      max-width: 640px;
+      margin: 22px 0 0;
+      color: rgba(242, 234, 211, .72);
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.85;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 28px;
+    }
+
+    .trust-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 38px;
+      padding: 8px 13px;
+      border: 1px solid rgba(242, 234, 211, .12);
+      border-radius: 14px;
+      color: rgba(242, 234, 211, .88);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(8px);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .trust-chip::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(227,197,104,.10);
+    }
+
+    .hero-emblem {
+      min-height: 290px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .hero-emblem::before,
+    .hero-emblem::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(227, 197, 104, .2);
+      animation: orbit 24s linear infinite;
+    }
+    .hero-emblem::before { width: 270px; height: 270px; border-inline-start-style: dashed; }
+    .hero-emblem::after { width: 205px; height: 205px; border-color: rgba(169,187,166,.22); animation-direction: reverse; }
+    .hero-emblem .gem {
+      --size: 142px;
+      box-shadow: 0 28px 70px rgba(0,0,0,.30), 0 0 60px rgba(227,197,104,.12);
+      animation: breathe 5s ease-in-out infinite;
+    }
+
+    .updated {
+      position: absolute;
+      inset-inline-end: 0;
+      bottom: -28px;
+      margin: 0;
+      color: rgba(242,234,211,.5);
+      font-size: 11px;
+      font-weight: 650;
+    }
+
+    .page-shell {
+      max-width: 1120px;
+      margin: 30px auto 0;
+      padding: 0 0 72px;
+    }
+
+    .language-panel { animation: reveal .34s ease both; }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    [dir="rtl"] .content-grid { grid-template-columns: minmax(0, 1fr) 250px; }
+    [dir="rtl"] .toc { grid-column: 2; grid-row: 1; }
+    [dir="rtl"] .policy { grid-column: 1; grid-row: 1; }
+
+    .toc {
+      position: sticky;
+      top: 92px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(16px);
+    }
+
+    .toc-label {
+      display: block;
+      margin: 0 4px 10px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 11px;
+      border-radius: 13px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color .18s ease, background .18s ease, transform .18s ease;
+    }
+    .toc a::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--sage);
+    }
+    .toc a:hover,
+    .toc a:focus-visible {
+      color: var(--green);
+      background: var(--card-soft);
+      transform: translateX(var(--toc-shift, 2px));
+      outline: none;
+    }
+    [dir="rtl"] .toc a:hover,
+    [dir="rtl"] .toc a:focus-visible { --toc-shift: -2px; }
+
+    .policy { min-width: 0; }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .summary-card {
+      min-height: 122px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+    }
+    .summary-card b {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--green);
+      font-size: 14px;
+    }
+    .summary-card span { color: var(--muted); font-size: 12px; line-height: 1.6; }
+
+    .policy-card {
+      position: relative;
+      overflow: hidden;
+      margin: 0 0 18px;
+      padding: clamp(23px, 4.5vw, 42px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      background: var(--card);
+      box-shadow: var(--shadow-soft);
+      scroll-margin-top: 104px;
+      transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+    }
+    .policy-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--line-strong);
+      box-shadow: var(--shadow);
+    }
+    .policy-card::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      inset-inline-end: -105px;
+      bottom: -105px;
+      transform: rotate(45deg);
+      border: 1px solid color-mix(in srgb, var(--green-mid) 14%, transparent);
+      box-shadow: inset 0 0 0 28px color-mix(in srgb, var(--gold) 3%, transparent),
+                  inset 0 0 0 52px color-mix(in srgb, var(--green-mid) 3%, transparent);
+      pointer-events: none;
+    }
+
+    .policy-card.featured {
+      color: var(--cream);
+      border-color: rgba(227,197,104,.18);
+      background:
+        radial-gradient(circle at 90% 10%, rgba(73,108,81,.4), transparent 18rem),
+        var(--forest);
+    }
+    .policy-card.featured h2,
+    .policy-card.featured h3 { color: #fffdf7; }
+    .policy-card.featured p,
+    .policy-card.featured li { color: rgba(242,234,211,.76); }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .section-number {
+      width: 43px;
+      height: 43px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--green);
+      background: var(--card-soft);
+      font-size: 12px;
+      font-weight: 850;
+      font-variant-numeric: tabular-nums;
+    }
+    .featured .section-number {
+      color: #08321f;
+      background: var(--gold);
+    }
+
+    .policy-card h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(21px, 3vw, 28px);
+      line-height: 1.35;
+      letter-spacing: -.025em;
+    }
+    .policy-card h3 {
+      margin: 25px 0 7px;
+      color: var(--green);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .policy-card p { margin: 0 0 14px; }
+    .policy-card p,
+    .policy-card li { color: var(--text); font-size: 14px; }
+    .policy-card strong { color: var(--ink); }
+    .featured strong { color: #fffdf7; }
+    .policy-card ul { margin: 0 0 16px; padding-inline-start: 21px; }
+    .policy-card li { margin-bottom: 8px; padding-inline-start: 3px; }
+    .policy-card li::marker { color: var(--gold-deep); }
+
+    .inline-link {
+      color: var(--green);
+      font-weight: 800;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    .featured .inline-link { color: var(--gold); }
+
+    .legal-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 22px;
+      padding: 16px 18px;
+      border: 1px solid rgba(227,197,104,.22);
+      border-radius: 18px;
+      background: rgba(227,197,104,.08);
+    }
+    .legal-strip span { color: rgba(242,234,211,.64); font-size: 12px; }
+    .legal-strip a {
+      flex: 0 0 auto;
+      padding: 9px 13px;
+      border-radius: 12px;
+      color: #08321f;
+      background: var(--gold);
+      font-size: 12px;
+      font-weight: 850;
+      text-decoration: none;
+    }
+
+    .support-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 22px;
+      border-color: color-mix(in srgb, var(--gold) 35%, var(--line));
+      background:
+        radial-gradient(circle at 4% 100%, rgba(227,197,104,.12), transparent 18rem),
+        var(--card);
+    }
+    .support-card .section-head { margin-bottom: 8px; }
+    .contact-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 12px 19px;
+      border-radius: 17px;
+      color: var(--cream);
+      background: var(--green);
+      box-shadow: 0 10px 24px rgba(41,79,51,.18);
+      font-size: 13px;
+      font-weight: 850;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .contact-button:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(41,79,51,.24); }
+
+    .footer {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 26px 20px 44px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .signature-rule {
+      width: 132px;
+      height: 4px;
+      margin: 0 auto 18px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), var(--green-mid));
+    }
+    .footer a { color: var(--green); font-weight: 800; text-underline-offset: 3px; }
+
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @keyframes breathe { 0%,100% { scale: 1; } 50% { scale: 1.035; } }
+    @keyframes reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+    @media (max-width: 1160px) {
+      .hero, .page-shell { margin-inline: 18px; }
+    }
+
+    @media (max-width: 850px) {
+      .hero { min-height: auto; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-emblem { min-height: 230px; }
+      .hero-emblem .gem { --size: 112px; }
+      .hero-emblem::before { width: 220px; height: 220px; }
+      .hero-emblem::after { width: 168px; height: 168px; }
+      .updated { position: static; margin-top: 20px; }
+      .content-grid,
+      [dir="rtl"] .content-grid { display: block; }
+      .toc {
+        position: sticky;
+        top: 82px;
+        z-index: 12;
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        margin-bottom: 16px;
+        padding: 7px;
+        border-radius: 17px;
+        scrollbar-width: none;
+      }
+      .toc::-webkit-scrollbar { display: none; }
+      .toc-label { display: none; }
+      .toc a { flex: 0 0 auto; white-space: nowrap; padding: 8px 11px; }
+      .toc a::before { display: none; }
+    }
+
+    @media (max-width: 650px) {
+      .site-nav { padding: 10px 12px; }
+      .brand span:last-child { display: none; }
+      .language-switch button { min-width: 61px; padding-inline: 9px; }
+      .theme-toggle { width: 42px; }
+      .hero { margin: 14px 12px 0; padding: 30px 23px; border-radius: 30px; }
+      .hero h1 { font-size: clamp(37px, 12vw, 52px); }
+      .hero-copy > p { font-size: 15px; }
+      .trust-row { gap: 7px; }
+      .trust-chip { font-size: 11px; }
+      .hero-emblem { min-height: 200px; }
+      .page-shell { margin: 18px 12px 0; padding-bottom: 44px; }
+      .summary-grid { grid-template-columns: 1fr; }
+      .summary-card { min-height: 0; }
+      .policy-card { border-radius: 23px; }
+      .support-card { grid-template-columns: 1fr; }
+      .contact-button { width: 100%; }
+      .legal-strip { align-items: stretch; flex-direction: column; }
+      .legal-strip a { text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; scroll-behavior: auto !important; transition: none !important; }
+    }
+
+    @media print {
+      :root { --page: #fff; --card: #fff; --text: #222; --ink: #000; --muted: #555; }
+      .site-nav, .toc, .hero-emblem, .contact-button { display: none !important; }
+      .hero { min-height: auto; margin: 0; border-radius: 0; box-shadow: none; }
+      .hero-grid { display: block; min-height: auto; }
+      .page-shell { margin: 20px 0; padding: 0; }
+      .content-grid, [dir="rtl"] .content-grid { display: block; }
+      .policy-card { break-inside: avoid; box-shadow: none; }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">تخطَّ إلى المحتوى</a>
 
-<header>
-  <div class="badge">🌱</div>
-  <h1>نماء</h1>
-  <p>الدعم وسياسة الخصوصية · Support &amp; Privacy</p>
-</header>
+  <nav class="site-nav" aria-label="التنقل الرئيسي">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="نماء — الصفحة الرئيسية">
+        <span class="mini-icon" aria-hidden="true"><span class="gem"></span></span>
+        <span>نماء</span>
+      </a>
+      <div class="nav-actions">
+        <div class="language-switch" role="group" aria-label="اختيار اللغة">
+          <button id="btn-ar" type="button" aria-pressed="true" aria-controls="ar" onclick="setLanguage('ar')">العربية</button>
+          <button id="btn-en" type="button" aria-pressed="false" aria-controls="en" onclick="setLanguage('en')">English</button>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="تفعيل الوضع الداكن" onclick="toggleTheme()">
+          <span id="theme-icon" aria-hidden="true">◐</span>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-<div class="wrap">
-  <div class="lang">
-    <button id="btn-ar" class="on" onclick="setLang('ar')">العربية</button>
-    <button id="btn-en" onclick="setLang('en')">English</button>
-  </div>
+  <header class="hero" id="top">
+    <div class="hero-line" aria-hidden="true"></div>
+    <div class="hero-grid">
+      <div class="hero-copy" id="hero-ar">
+        <span class="eyebrow">وثيقة نماء</span>
+        <h1>خصوصيتك،<br>بلغة واضحة.</h1>
+        <p>صُمّم نماء ليمنحك رؤية أوضح لأموالك، من دون أن يتنازل عن خصوصية سجلاتك. هنا نشرح ببساطة ما يستخدمه التطبيق، وأين تُحفظ بياناتك، وما الذي يبقى تحت سيطرتك.</p>
+        <div class="trust-row" aria-label="مبادئ الخصوصية">
+          <span class="trust-chip">سجلاتك على جهازك</span>
+          <span class="trust-chip">لا إعلانات ولا تتبّع</span>
+          <span class="trust-chip">iCloud اختياري</span>
+        </div>
+        <p class="updated">سارية من ٤ أغسطس ٢٠٢٦</p>
+      </div>
+      <div class="hero-copy" id="hero-en" hidden>
+        <span class="eyebrow">A Namaa document</span>
+        <h1>Your privacy,<br>made clear.</h1>
+        <p>Namaa is designed to give you a clearer view of your money without compromising the privacy of your records. This page explains what the app uses, where your information lives, and what remains in your control.</p>
+        <div class="trust-row" aria-label="Privacy principles">
+          <span class="trust-chip">Records stay on your device</span>
+          <span class="trust-chip">No ads or tracking</span>
+          <span class="trust-chip">Optional iCloud sync</span>
+        </div>
+        <p class="updated">Effective August 4, 2026</p>
+      </div>
+      <div class="hero-emblem" aria-hidden="true">
+        <span class="gem"></span>
+      </div>
+    </div>
+  </header>
 
-  <!-- ============================== ARABIC ============================== -->
-  <div id="ar" dir="rtl">
-    <p class="updated">آخر تحديث: ٢٢ يونيو ٢٠٢٦</p>
+  <main class="page-shell" id="main-content">
+    <!-- Arabic -->
+    <div class="language-panel" id="ar" dir="rtl">
+      <div class="content-grid">
+        <aside class="toc" aria-label="محتويات الصفحة">
+          <span class="toc-label">في هذه الصفحة</span>
+          <a href="#ar-overview">نظرة عامة</a>
+          <a href="#ar-data">المعلومات والتخزين</a>
+          <a href="#ar-automation">الأتمتة والصوت</a>
+          <a href="#ar-control">التحكم والمشاركة</a>
+          <a href="#ar-subscription">اشتراك نماء+</a>
+          <a href="#ar-support">الدعم</a>
+        </aside>
 
-    <section class="block">
-      <h2><span class="dot"></span>نظرة عامة</h2>
-      <p>نماء تطبيق مالي شخصي يساعدك على معرفة المبلغ الآمن للصرف على مدار دورة راتبك. صُمّم نماء على مبدأ الخصوصية أولًا: <strong>بياناتك المالية تبقى لك وحدك</strong>، ولا يطّلع عليها المطوّر إطلاقًا.</p>
-    </section>
+        <div class="policy">
+          <div class="summary-grid" aria-label="ملخص الخصوصية">
+            <div class="summary-card"><b>على جهازك أولاً</b><span>تُحفظ سجلاتك المالية محلياً، ولا يوجد حساب مطلوب لاستخدام نماء.</span></div>
+            <div class="summary-card"><b>أنت من يبدأ المشاركة</b><span>لا يشارك نماء بيانات الحساب أو التقارير إلا عندما تختار أنت ذلك.</span></div>
+            <div class="summary-card"><b>Apple للشراء والمزامنة</b><span>تدير Apple الاشتراكات، ويمكنك اختيار مزامنة iCloud الخاصة بك.</span></div>
+          </div>
 
-    <section class="block">
-      <h2><span class="dot"></span>سياسة الخصوصية</h2>
+          <section class="policy-card featured" id="ar-overview">
+            <div class="section-head"><span class="section-number">01</span><h2>نظرة عامة</h2></div>
+            <p>صُمم نماء لمساعدتك على إدارة أموالك الشخصية مع الحفاظ على خصوصية سجلاتك. يعالج التطبيق المعلومات التي تدخلها لتقديم التخطيط المالي والتصنيف والتقارير والتذكيرات، من دون إعلانات أو تتبّع عبر التطبيقات.</p>
+            <p><strong>لا يحتاج نماء إلى إنشاء حساب، ولا يبيع بياناتك الشخصية.</strong></p>
+          </section>
 
-      <h3>ما البيانات التي نجمعها؟</h3>
-      <p><strong>لا نجمع أي بيانات شخصية.</strong> لا يملك نماء خوادم خاصة، ولا يرسل بياناتك إلى المطوّر أو إلى أي طرف ثالث. كل ما تُدخله — الراتب، الالتزامات، المصاريف، الأهداف، المناسبات — يُحفظ على جهازك وداخل حساب iCloud الخاص بك فقط.</p>
+          <section class="policy-card" id="ar-data">
+            <div class="section-head"><span class="section-number">02</span><h2>المعلومات والتخزين</h2></div>
+            <h3>المعلومات التي يستخدمها نماء</h3>
+            <p>قد يعالج نماء البيانات التي تدخلها، ومنها الاسم والراتب وأرصدة الحسابات وبيانات الحساب وIBAN والعمليات والالتزامات والأهداف والميزانيات وأسماء المتاجر والتصنيفات المخصصة والتفضيلات. تُستخدم هذه المعلومات فقط لتشغيل الميزات التي تطلبها داخل التطبيق.</p>
 
-      <h3>التخزين والمزامنة (iCloud)</h3>
-      <p>تُخزّن بياناتك محليًا على جهازك، وتُزامَن عبر خدمة CloudKit من Apple داخل حساب iCloud الخاص بك حتى تظهر على أجهزتك الأخرى. تجري هذه المزامنة بالكامل تحت حساب Apple الخاص بك، ويحكمها <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">إشعار خصوصية Apple</a>. المطوّر لا يملك أي وصول إلى هذه البيانات.</p>
+            <h3>التخزين وiCloud</h3>
+            <p>تُحفظ سجلاتك المالية على جهازك. وعند تفعيل مزامنة iCloud، قد تتزامن السجلات والإعدادات المؤهلة عبر مساحة iCloud وCloudKit الخاصة بك تحت حساب Apple. وتعالج Apple بيانات iCloud وفق <a class="inline-link" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">سياسة الخصوصية الخاصة بها</a>.</p>
 
-      <h3>لا تتبّع ولا إعلانات</h3>
-      <ul>
-        <li>لا نستخدم أدوات تحليلات أو تتبّع.</li>
-        <li>لا توجد إعلانات داخل التطبيق.</li>
-        <li>لا نشارك بياناتك مع أي جهة، لأننا أصلًا لا نملكها.</li>
-      </ul>
+            <h3>التتبع والإعلانات</h3>
+            <ul>
+              <li>لا يحتوي نماء على إعلانات من جهات خارجية.</li>
+              <li>لا يستخدم التتبع عبر التطبيقات أو حزمة تحليلات خارجية.</li>
+              <li>لا يبيع نماء البيانات الشخصية.</li>
+            </ul>
+          </section>
 
-      <h3>التنبيهات</h3>
-      <p>تُجدوَل التنبيهات (كتذكير الراتب والدفعات) محليًا على جهازك، ولا تمرّ بأي خادم.</p>
+          <section class="policy-card" id="ar-automation">
+            <div class="section-head"><span class="section-number">03</span><h2>رسائل البنوك والإدخال الصوتي</h2></div>
+            <h3>أتمتة رسائل البنوك</h3>
+            <p>لا يصل نماء إلى قاعدة بيانات الرسائل. يعمل التسجيل فقط عندما تنشئ أتمتة في تطبيق الاختصارات من Apple وتختار تمرير رسالة إلى نماء. يعالج التطبيق نص الرسالة لإنشاء مسودة عملية وربطها بالحساب المناسب متى أمكن.</p>
 
-      <h3>الاشتراكات والدفع</h3>
-      <p>تتم عمليات الاشتراك في «نماء+» عبر نظام الشراء داخل التطبيق من Apple. تتولّى Apple معالجة الدفع، ولا يصل المطوّر إلى تفاصيل بطاقتك أو وسيلة دفعك.</p>
+            <h3>الإدخال الصوتي</h3>
+            <p>يستخدم الإدخال الصوتي الميكروفون وخدمات Speech من Apple بعد منح الإذن فقط. لا يحتفظ نماء بالتسجيل الصوتي. وقد تعالج Apple الكلام وفق شروط الخصوصية الخاصة بها عندما لا تتوفر المعالجة على الجهاز.</p>
 
-      <h3>التحكّم في بياناتك وحذفها</h3>
-      <ul>
-        <li>تقدر تُصدّر بياناتك في أي وقت بصيغة CSV أو PDF من داخل التطبيق.</li>
-        <li>تقدر تمسح كل بياناتك من داخل الإعدادات في التطبيق.</li>
-        <li>حذف التطبيق وإزالة بياناته من iCloud يحذفها نهائيًا.</li>
-      </ul>
+            <h3>المعالجة السحابية الاختيارية للنص</h3>
+            <p>إذا توفرت خدمة نماء الاختيارية لفهم النص سحابياً، يطلب نماء موافقتك قبل إرسال النص المتعرّف عليه. لا يُرسل التسجيل الصوتي إلى هذه الخدمة، ويمكنك الرفض والاستمرار باستخدام المحلل الموجود على الجهاز.</p>
 
-      <h3>خصوصية الأطفال</h3>
-      <p>نماء غير موجّه للأطفال، ولا يجمع أي بيانات منهم — أو من أي مستخدم.</p>
+            <h3>التنبيهات</h3>
+            <p>تُجدول تنبيهات الراتب والدفعات والتذكيرات محلياً على جهازك بعد موافقتك.</p>
+          </section>
 
-      <h3>التغييرات على هذه السياسة</h3>
-      <p>قد نُحدّث هذه السياسة من وقت لآخر، وسيظهر تاريخ آخر تحديث في أعلى الصفحة.</p>
-    </section>
+          <section class="policy-card" id="ar-control">
+            <div class="section-head"><span class="section-number">04</span><h2>المشاركة والتحكم والحذف</h2></div>
+            <h3>المشاركة</h3>
+            <p>لا يشارك نماء معلوماتك إلا عندما تبدأ أنت عملية مشاركة عبر النظام، مثل مشاركة بيانات الحساب أو IBAN أو تصدير تقرير PDF. أنت تختار وجهة المشاركة وعليك التأكد من المستلم.</p>
 
-    <section class="block">
-      <h2><span class="dot"></span>شروط الاشتراك في نماء+</h2>
-      <ul>
-        <li>اشتراك متجدّد تلقائيًا، متوفّر بخطّتين: <strong>شهري ٩٫٩٩ ر.س / شهر</strong> أو <strong>سنوي ٤٩٫٩٩ ر.س / سنة</strong> (قد تختلف القيمة حسب منطقتك حسب أسعار Apple المحلّية).</li>
-        <li><strong>تجربة مجانية ٧ أيام</strong> للمشتركين الجدد.</li>
-        <li>يُحسم المبلغ على حساب Apple عند تأكيد الشراء.</li>
-        <li>يتجدّد الاشتراك تلقائيًا ما لم تُلغِه قبل ٢٤ ساعة على الأقل من نهاية الفترة الحالية.</li>
-        <li>يُحسم مبلغ التجديد خلال ٢٤ ساعة قبل نهاية الفترة الحالية.</li>
-        <li>تقدر تدير اشتراكك أو تلغيه في أي وقت من إعدادات حساب App Store.</li>
-        <li>تتوفّر «استعادة المشتريات» داخل التطبيق.</li>
-      </ul>
-      <p class="muted">شروط الاستخدام (EULA): <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">اتفاقية ترخيص المستخدم القياسية من Apple</a>.</p>
-    </section>
+            <h3>حذف البيانات</h3>
+            <ul>
+              <li>استخدم الإعدادات ← امسح كل البيانات لإزالة سجلات نماء المحلية وتفضيلاته.</li>
+              <li>يؤدي حذف التطبيق إلى إزالة حاويته المحلية.</li>
+              <li>يمكن إدارة سجلات iCloud المتزامنة من إعدادات iCloud في حساب Apple.</li>
+              <li>قد تحتفظ Apple بسجل المشتريات وفق سياساتها.</li>
+            </ul>
 
-    <section class="block">
-      <h2><span class="dot"></span>الدعم والتواصل</h2>
-      <p>لأي سؤال أو مساعدة بخصوص نماء أو هذه السياسة، تواصل معنا عبر البريد:</p>
-      <p class="fill">✉︎ ضع بريد الدعم هنا — مثال: support@yourdomain.com</p>
-    </section>
-  </div>
+            <h3>خصوصية الأطفال</h3>
+            <p>نماء غير موجّه للأطفال، ولا يستخدم بياناتهم لإنشاء ملفات تعريف أو إعلانات.</p>
 
-  <!-- ============================== ENGLISH ============================== -->
-  <div id="en" dir="ltr" hidden>
-    <p class="updated">Last updated: June 22, 2026</p>
+            <h3>التغييرات على هذه السياسة</h3>
+            <p>قد نحدّث هذه السياسة عندما تتغير ميزات نماء أو متطلبات الخدمة. سيظهر تاريخ السريان الأحدث في أعلى الصفحة.</p>
+          </section>
 
-    <section class="block">
-      <h2><span class="dot"></span>Overview</h2>
-      <p>Namaa is a personal-finance app that helps you see how much is safe to spend across your salary cycle. Namaa is built privacy-first: <strong>your financial data stays yours alone</strong>, and the developer never has access to it.</p>
-    </section>
+          <section class="policy-card featured" id="ar-subscription">
+            <div class="section-head"><span class="section-number">05</span><h2>اشتراك نماء+</h2></div>
+            <ul>
+              <li>اشتراك متجدد تلقائياً بخطتين: <strong>شهري ٩٫٩٩ ر.س</strong> أو <strong>سنوي ٤٩٫٩٩ ر.س</strong>. قد يختلف السعر حسب منطقة حساب Apple.</li>
+              <li>تتوفر تجربة مجانية لمدة ٧ أيام للمشتركين المؤهلين الجدد.</li>
+              <li>يُحمّل المبلغ على حساب Apple عند تأكيد الشراء.</li>
+              <li>يتجدد الاشتراك تلقائياً ما لم يُلغَ قبل ٢٤ ساعة على الأقل من نهاية الفترة الحالية.</li>
+              <li>يُحمّل مبلغ التجديد خلال ٢٤ ساعة قبل نهاية الفترة الحالية.</li>
+              <li>يمكن إدارة الاشتراك أو إلغاؤه من إعدادات حساب Apple.</li>
+              <li>تتوفر «استعادة المشتريات» داخل التطبيق.</li>
+            </ul>
+            <p>تعالج Apple معلومات الدفع وسجل المشتريات وفق سياساتها. يستلم نماء حالة استحقاق الاشتراك، ولا يستلم بيانات بطاقة الدفع كاملة.</p>
+            <div class="legal-strip">
+              <span>شروط الاستخدام المعتمدة للتطبيق</span>
+              <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">اتفاقية Apple القياسية ↗</a>
+            </div>
+          </section>
 
-    <section class="block">
-      <h2><span class="dot"></span>Privacy Policy</h2>
+          <section class="policy-card support-card" id="ar-support">
+            <div>
+              <div class="section-head"><span class="section-number">06</span><h2>الدعم والتواصل</h2></div>
+              <p>لأسئلة الخصوصية أو المساعدة في استخدام نماء، اكتب لنا مع ذكر إصدار التطبيق وإصدار iOS. لا ترسل رسائل بنكية كاملة أو أرقام حسابات أو IBAN عبر البريد.</p>
+            </div>
+            <a class="contact-button" href="mailto:Baothmanabdulqader@gmail.com">تواصل عبر البريد</a>
+          </section>
+        </div>
+      </div>
+    </div>
 
-      <h3>What data do we collect?</h3>
-      <p><strong>We collect no personal data.</strong> Namaa runs no servers of its own and sends none of your data to the developer or any third party. Everything you enter — salary, commitments, expenses, goals, occasions — is stored on your device and inside your own iCloud account only.</p>
+    <!-- English -->
+    <div class="language-panel" id="en" dir="ltr" hidden>
+      <div class="content-grid">
+        <aside class="toc" aria-label="Page contents">
+          <span class="toc-label">On this page</span>
+          <a href="#en-overview">Overview</a>
+          <a href="#en-data">Information &amp; storage</a>
+          <a href="#en-automation">Automation &amp; voice</a>
+          <a href="#en-control">Control &amp; sharing</a>
+          <a href="#en-subscription">Namaa+ subscription</a>
+          <a href="#en-support">Support</a>
+        </aside>
 
-      <h3>Storage &amp; sync (iCloud)</h3>
-      <p>Your data is stored locally on your device and synced through Apple's CloudKit within your own iCloud account so it appears on your other devices. This sync happens entirely under your Apple ID and is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. The developer has no access to it.</p>
+        <div class="policy">
+          <div class="summary-grid" aria-label="Privacy summary">
+            <div class="summary-card"><b>On-device first</b><span>Your financial records are stored locally, and Namaa does not require an account.</span></div>
+            <div class="summary-card"><b>You initiate sharing</b><span>Namaa shares account details or reports only when you choose to do so.</span></div>
+            <div class="summary-card"><b>Apple for sync and billing</b><span>Apple manages subscriptions, and private iCloud sync remains optional.</span></div>
+          </div>
 
-      <h3>No tracking, no ads</h3>
-      <ul>
-        <li>We use no analytics or tracking tools.</li>
-        <li>There are no ads in the app.</li>
-        <li>We don't share your data with anyone — because we don't hold it.</li>
-      </ul>
+          <section class="policy-card featured" id="en-overview">
+            <div class="section-head"><span class="section-number">01</span><h2>Overview</h2></div>
+            <p>Namaa is designed to help you manage personal finances while keeping your records private. The app processes the information you enter to provide financial planning, classification, reporting, and reminder features without advertising or cross-app tracking.</p>
+            <p><strong>Namaa requires no account and does not sell personal data.</strong></p>
+          </section>
 
-      <h3>Notifications</h3>
-      <p>Reminders (such as payday and payment alerts) are scheduled locally on your device and never pass through any server.</p>
+          <section class="policy-card" id="en-data">
+            <div class="section-head"><span class="section-number">02</span><h2>Information and storage</h2></div>
+            <h3>Information used by Namaa</h3>
+            <p>Namaa may process the details you enter, including your name, salary, account balances, account and IBAN details, transactions, commitments, goals, budgets, merchant labels, custom categories, and preferences. This information is used only to provide the features you request in the app.</p>
 
-      <h3>Subscriptions &amp; payment</h3>
-      <p>Namaa+ subscriptions are handled through Apple's In-App Purchase. Apple processes the payment, and the developer never receives your card or payment-method details.</p>
+            <h3>Storage and iCloud</h3>
+            <p>Your financial records are stored on your device. If you enable iCloud sync, eligible records and settings may also sync through your private Apple iCloud and CloudKit storage under your Apple Account. Apple processes iCloud data under <a class="inline-link" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">its own privacy policy</a>.</p>
 
-      <h3>Controlling and deleting your data</h3>
-      <ul>
-        <li>You can export your data anytime as CSV or PDF from within the app.</li>
-        <li>You can erase all of your data from the app's Settings.</li>
-        <li>Deleting the app and removing its iCloud data deletes it permanently.</li>
-      </ul>
+            <h3>Tracking and advertising</h3>
+            <ul>
+              <li>Namaa contains no third-party advertising.</li>
+              <li>Namaa uses no cross-app tracking or third-party analytics SDK.</li>
+              <li>Namaa does not sell personal data.</li>
+            </ul>
+          </section>
 
-      <h3>Children's privacy</h3>
-      <p>Namaa is not directed at children and collects no data from them — or from any user.</p>
+          <section class="policy-card" id="en-automation">
+            <div class="section-head"><span class="section-number">03</span><h2>Bank messages and voice entry</h2></div>
+            <h3>Bank-message automation</h3>
+            <p>Namaa does not access the Messages database. Logging works only when you create an Apple Shortcuts automation and choose to pass a message to Namaa. The app processes that text to create a transaction draft and associate it with an account when possible.</p>
 
-      <h3>Changes to this policy</h3>
-      <p>We may update this policy from time to time; the latest date appears at the top of the page.</p>
-    </section>
+            <h3>Voice entry</h3>
+            <p>Voice entry uses Apple's microphone and Speech services only after you grant permission. Namaa does not retain the audio recording. Apple may process speech under its privacy terms when on-device recognition is unavailable.</p>
 
-    <section class="block">
-      <h2><span class="dot"></span>Namaa+ Subscription Terms</h2>
-      <ul>
-        <li>Auto-renewable subscription, available as <strong>Monthly — SAR 9.99 / month</strong> or <strong>Annual — SAR 49.99 / year</strong> (local price set by Apple may vary by region).</li>
-        <li><strong>7-day free trial</strong> for new subscribers.</li>
-        <li>Payment is charged to your Apple Account on confirmation of purchase.</li>
-        <li>The subscription renews automatically unless cancelled at least 24 hours before the end of the current period.</li>
-        <li>Renewal is charged within 24 hours before the end of the current period.</li>
-        <li>You can manage or cancel anytime in your App Store account settings.</li>
-        <li>"Restore Purchases" is available inside the app.</li>
-      </ul>
-      <p class="muted">Terms of Use (EULA): <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple's standard End User License Agreement</a>.</p>
-    </section>
+            <h3>Optional cloud text processing</h3>
+            <p>If an optional Namaa cloud text-understanding service is available, Namaa asks for your consent before sending recognized text. Audio is not sent to that service, and you can decline and continue using the on-device parser.</p>
 
-    <section class="block">
-      <h2><span class="dot"></span>Support &amp; Contact</h2>
-      <p>For any question or help regarding Namaa or this policy, contact us by email:</p>
-      <p class="fill">✉︎ Put your support email here — Baothmanabdulqader@gmail.com</p>
-    </section>
-  </div>
+            <h3>Notifications</h3>
+            <p>Payday, payment, and reminder notifications are scheduled locally on your device after you grant permission.</p>
+          </section>
 
-  <footer>
-    <hr>
+          <section class="policy-card" id="en-control">
+            <div class="section-head"><span class="section-number">04</span><h2>Sharing, control, and deletion</h2></div>
+            <h3>Sharing</h3>
+            <p>Namaa shares information only when you initiate a system share action, such as sharing account or IBAN details or exporting a PDF report. You choose the destination and are responsible for confirming the recipient.</p>
+
+            <h3>Deleting data</h3>
+            <ul>
+              <li>Use Settings → Erase all data to remove local Namaa records and preferences.</li>
+              <li>Deleting the app removes its local container.</li>
+              <li>Synced iCloud records can be managed through your Apple Account's iCloud settings.</li>
+              <li>Apple may retain purchase history under its own policies.</li>
+            </ul>
+
+            <h3>Children's privacy</h3>
+            <p>Namaa is not directed at children and does not use children's information for profiles or advertising.</p>
+
+            <h3>Changes to this policy</h3>
+            <p>We may update this policy when Namaa's features or service requirements change. The latest effective date will appear at the top of this page.</p>
+          </section>
+
+          <section class="policy-card featured" id="en-subscription">
+            <div class="section-head"><span class="section-number">05</span><h2>Namaa+ subscription</h2></div>
+            <ul>
+              <li>Auto-renewable subscription offered as <strong>Monthly — SAR 9.99</strong> or <strong>Annual — SAR 49.99</strong>. Pricing may vary by Apple Account region.</li>
+              <li>A 7-day free trial is available to eligible new subscribers.</li>
+              <li>Payment is charged to your Apple Account when purchase is confirmed.</li>
+              <li>The subscription renews automatically unless cancelled at least 24 hours before the end of the current period.</li>
+              <li>Renewal is charged within 24 hours before the end of the current period.</li>
+              <li>You can manage or cancel the subscription in Apple Account settings.</li>
+              <li>Restore Purchases is available inside the app.</li>
+            </ul>
+            <p>Apple processes payment and purchase-history information under its policies. Namaa receives subscription entitlement status but does not receive your full payment-card details.</p>
+            <div class="legal-strip">
+              <span>Terms governing use of the application</span>
+              <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Apple Standard EULA ↗</a>
+            </div>
+          </section>
+
+          <section class="policy-card support-card" id="en-support">
+            <div>
+              <div class="section-head"><span class="section-number">06</span><h2>Support and contact</h2></div>
+              <p>For privacy questions or help using Namaa, email us with your app and iOS versions. Do not send full bank messages, account numbers, IBANs, or other sensitive financial information.</p>
+            </div>
+            <a class="contact-button" href="mailto:Baothmanabdulqader@gmail.com">Email support</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="signature-rule" aria-hidden="true"></div>
     <p>© 2026 نماء · Namaa — عبدالقادر باعثمان</p>
+    <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">شروط الاستخدام · Terms of Use</a></p>
   </footer>
-</div>
 
-<script>
-  function setLang(l){
-    document.getElementById('ar').hidden = (l !== 'ar');
-    document.getElementById('en').hidden = (l !== 'en');
-    document.documentElement.lang = l;
-    document.documentElement.dir = (l === 'ar') ? 'rtl' : 'ltr';
-    document.getElementById('btn-ar').classList.toggle('on', l === 'ar');
-    document.getElementById('btn-en').classList.toggle('on', l === 'en');
-  }
-</script>
+  <script>
+    const root = document.documentElement;
 
+    function setLanguage(language) {
+      const isArabic = language === 'ar';
+      document.getElementById('ar').hidden = !isArabic;
+      document.getElementById('en').hidden = isArabic;
+      document.getElementById('hero-ar').hidden = !isArabic;
+      document.getElementById('hero-en').hidden = isArabic;
+      document.getElementById('btn-ar').setAttribute('aria-pressed', String(isArabic));
+      document.getElementById('btn-en').setAttribute('aria-pressed', String(!isArabic));
+      root.lang = language;
+      root.dir = isArabic ? 'rtl' : 'ltr';
+      document.querySelector('.skip-link').textContent = isArabic ? 'تخطَّ إلى المحتوى' : 'Skip to content';
+      document.querySelector('.site-nav').setAttribute('aria-label', isArabic ? 'التنقل الرئيسي' : 'Main navigation');
+      document.querySelector('.language-switch').setAttribute('aria-label', isArabic ? 'اختيار اللغة' : 'Choose language');
+      updateThemeLabel();
+      try { localStorage.setItem('namaa-policy-language', language); } catch (_) {}
+    }
+
+    function toggleTheme() {
+      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+      root.dataset.theme = next;
+      try { localStorage.setItem('namaa-policy-theme', next); } catch (_) {}
+      updateThemeLabel();
+    }
+
+    function updateThemeLabel() {
+      const isArabic = root.lang === 'ar';
+      const isDark = root.dataset.theme === 'dark';
+      const button = document.getElementById('theme-toggle');
+      button.setAttribute('aria-label', isArabic
+        ? (isDark ? 'تفعيل الوضع الفاتح' : 'تفعيل الوضع الداكن')
+        : (isDark ? 'Use light mode' : 'Use dark mode'));
+      document.getElementById('theme-icon').textContent = isDark ? '☼' : '◐';
+      document.querySelector('meta[name="theme-color"]').content = isDark ? '#101410' : '#14261a';
+    }
+
+    let initialLanguage = 'ar';
+    try { initialLanguage = localStorage.getItem('namaa-policy-language') || 'ar'; } catch (_) {}
+    setLanguage(initialLanguage === 'en' ? 'en' : 'ar');
+    updateThemeLabel();
+  </script>
 </body>
 </html>
